@@ -36,6 +36,10 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
 
     for fruit in fruit_kinds {
         // TODO: Put new fruits if not already present. Note that you
+        match basket.get(fruit) {
+            Some(fruit) => fruit,
+            None => basket.insert(fruit, 2)
+        }
         // are not allowed to put any type of fruit that's already
         // present!
     }
